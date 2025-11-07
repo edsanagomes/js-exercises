@@ -11,7 +11,7 @@ export function computeSphereVolume(diameter) {
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-  // Write your code here
+  return Math.round(n * 10) / 10;
 }
 
 /**
@@ -21,6 +21,7 @@ export function roundNumberToOneDecimals(n) {
 export function computeAverage(grades) {
   // Write your code here
 }
+
 
 /**
  * @param {number[]} grades An array containing all grades
