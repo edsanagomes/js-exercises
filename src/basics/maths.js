@@ -3,7 +3,7 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  return (4/3) * Math.PI * radius ** 3
+  return (4 / 3) * Math.PI * radius ** 3
 }
 
 /**
@@ -21,7 +21,6 @@ export function roundNumberToOneDecimals(n) {
 export function computeAverage(grades) {
   return grades.reduce((acc, grade) => acc + grade, 0) / grades.length
 }
-
 
 /**
  * @param {number[]} grades An array containing all grades
