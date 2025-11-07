@@ -13,7 +13,7 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
-  // Write your code here
+  return n > 2
 }
 
 /**
