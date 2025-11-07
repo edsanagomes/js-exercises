@@ -3,7 +3,7 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  // Write your code here
+  return (4/3) * Math.PI * radius ** 3
 }
 
 /**
