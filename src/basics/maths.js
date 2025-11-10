@@ -17,8 +17,12 @@ export function computeSphereVolume(diameter) {
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-  return Math.round(n * 10) / 10
+  if (typeof n !== 'number' || !isFinite(n)) {
+    throw new Error('Unsupported type');
+  }
+  return Math.round(n * 10) / 10;
 }
+
 
 /**
  * @param {number[]} grades An array containing all grades
