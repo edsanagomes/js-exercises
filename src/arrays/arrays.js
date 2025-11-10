@@ -4,17 +4,20 @@
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   if (!Array.isArray(array)) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
-  const result = [];
+  const result = []
   for (const str of array) {
     if (typeof str !== 'string') {
-      throw new Error('Unsupported type');
+      throw new Error('Unsupported type')
     }
-    const words = str.trim().split(/\s+/).filter(word => word !== '');
-    result.push(...words);
+    const words = str
+      .trim()
+      .split(/\s+/)
+      .filter((word) => word !== '')
+    result.push(...words)
   }
-  return result; 
+  return result
 }
 
 /**
@@ -25,9 +28,9 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  */
 export function concatenateArrays(array1, array2) {
   if (!Array.isArray(array1) || !Array.isArray(array2)) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
-  return [...array1, ...array2];
+  return [...array1, ...array2]
 }
 
 /**
@@ -36,16 +39,21 @@ export function concatenateArrays(array1, array2) {
  * @param {...*} newElements
  * @return {array<*>} A new array, **the original array should not be modified**
  */
-export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
+export function replaceElementsInArrayAtAGivenPlace(
+  array,
+  index,
+  ...newElements
+) {
   if (!Array.isArray(array)) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
   if (typeof index !== 'number') {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
-  const newArray = [...array];
+  const newArray = [...array]
   for (let i = 0; i < newElements.length; i++) {
-    newArray[index + i] = newElements[i];
+    newArray[index + i] = newElements[i]
   }
-}
 
+  return newArray
+}
