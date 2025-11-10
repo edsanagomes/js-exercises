@@ -28,9 +28,7 @@ export function isMult(n, m) {
   if (typeof n !== 'number' || typeof m !== 'number' || Number.isNaN(n) || Number.isNaN(m)) {
     throw new Error('Unsupported type');
   }
-  if (n === 0) {
-    return m === 0; 
-  }
 
-  return Number.isInteger(m / n); 
+  return Math.abs(m % n) < 1e-10;
 }
+
