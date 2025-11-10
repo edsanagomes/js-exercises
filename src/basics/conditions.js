@@ -25,5 +25,9 @@ export function isBiggerThan2(n) {
  * @return {boolean} true if m is a multiple of n
  */
 export function isMult(n, m) {
-  return m % n === 0
+  if (typeof n !== 'number' || typeof m !== 'number') {
+    throw new Error('Unsupported type');
+  }
+  return m % n === 0;
 }
+
