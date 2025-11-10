@@ -36,10 +36,16 @@ export function concatenateArrays(array1, array2) {
  * @param {...*} newElements
  * @return {array<*>} A new array, **the original array should not be modified**
  */
-export function replaceElementsInArrayAtAGivenPlace(
-  array,
-  index,
-  ...newElements
-) {
-  // Write your code here
+export function replaceElementsInArrayAtAGivenPlace(array, index, ...newElements) {
+  if (!Array.isArray(array)) {
+    throw new Error('Unsupported type');
+  }
+  if (typeof index !== 'number') {
+    throw new Error('Unsupported type');
+  }
+  const newArray = [...array];
+  for (let i = 0; i < newElements.length; i++) {
+    newArray[index + i] = newElements[i];
+  }
 }
+
