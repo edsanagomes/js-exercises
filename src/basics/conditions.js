@@ -13,6 +13,9 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
+   if (typeof n !== 'number') {
+    throw new Error('Unsupported type');
+  }
   return n > 2
 }
 
