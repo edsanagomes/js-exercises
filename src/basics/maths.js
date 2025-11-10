@@ -3,7 +3,7 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  if (typeof diameter !== 'number' || Number.isNaN(diameter)) {
+  if ( Number.isNaN(diameter) || typeof diameter !== 'number') {
     throw new Error('Unsupported type');
   }
   const radius = diameter / 2;
