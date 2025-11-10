@@ -28,7 +28,7 @@ export function isMult(n, m) {
   if (typeof n !== 'number' || typeof m !== 'number' || Number.isNaN(n) || Number.isNaN(m)) {
     throw new Error('Unsupported type');
   }
-  if (n === 0 && m !== 0) throw new Error('Division by zero');
+  if (n === 0) return m === 0;
   return m % n === 0;
 }
 
