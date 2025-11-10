@@ -7,5 +7,17 @@
  * @return {string} the resulting string, with all needle words transformed to newWord
  */
 export function findAndReplacePreservingCase(needle, haystack, newWord) {
-  // Write your code here
+  if (typeof needle !== 'string' || typeof haystack !== 'string' || typeof newWord !== 'string') {
+    throw new Error('Unsupported type');
+  }
+
+  return haystack.replace(new RegExp(needle, 'gi'), (match) => {
+    if (match[0] === match[0].toUpperCase()) {
+      return newWord[0].toUpperCase() + newWord.slice(1);
+    } else {
+      
+    }
+  });
 }
+
+
