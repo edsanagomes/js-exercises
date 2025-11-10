@@ -28,6 +28,6 @@ export function isMult(n, m) {
   if (typeof n !== 'number' || typeof m !== 'number' || Number.isNaN(n) || Number.isNaN(m)) {
     throw new Error('Unsupported type');
   }
-  return m % n === 0;
+  return n % m === 0;
 }
 
