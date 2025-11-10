@@ -29,8 +29,19 @@ export function roundNumberToOneDecimals(n) {
  * @return {number} average with full precision
  */
 export function computeAverage(grades) {
-  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length
+  if (!Array.isArray(grades) || grades.length === 0) {
+    throw new Error('Unsupported type');
+  }
+
+  grades.forEach(grade => {
+    if (typeof grade !== 'number' || Number.isNaN(grade)) {
+      throw new Error('Unsupported type');
+    }
+  });
+
+  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
 }
+
 
 /**
  * @param {number[]} grades An array containing all grades
