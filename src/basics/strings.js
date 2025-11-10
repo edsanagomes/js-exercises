@@ -15,7 +15,7 @@ export function findAndReplacePreservingCase(needle, haystack, newWord) {
     if (match[0] === match[0].toUpperCase()) {
       return newWord[0].toUpperCase() + newWord.slice(1);
     } else {
-      return newWord[0].toLowerCase() + newWord.slice();
+      return newWord[0].toLowerCase() + newWord.slice(1);
     }
   });
 }
