@@ -4,13 +4,12 @@
  */
 export function computeSphereVolume(diameter) {
   if (typeof diameter !== 'number' || !isFinite(diameter) || diameter < 0) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
 
-  const radius = diameter / 2;
-  return (4 / 3) * Math.PI * radius ** 3;
+  const radius = diameter / 2
+  return (4 / 3) * Math.PI * radius ** 3
 }
-
 
 /**
  * @param {number} n
@@ -18,11 +17,10 @@ export function computeSphereVolume(diameter) {
  */
 export function roundNumberToOneDecimals(n) {
   if (typeof n !== 'number' || !isFinite(n)) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
-  return Math.round(n * 10) / 10;
+  return Math.round(n * 10) / 10
 }
-
 
 /**
  * @param {number[]} grades An array containing all grades
@@ -30,23 +28,33 @@ export function roundNumberToOneDecimals(n) {
  */
 export function computeAverage(grades) {
   if (!Array.isArray(grades) || grades.length === 0) {
-    throw new Error('Unsupported type');
+    throw new Error('Unsupported type')
   }
 
-  grades.forEach(grade => {
+  grades.forEach((grade) => {
     if (typeof grade !== 'number' || Number.isNaN(grade)) {
-      throw new Error('Unsupported type');
+      throw new Error('Unsupported type')
     }
-  });
+  })
 
-  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length;
+  return grades.reduce((acc, grade) => acc + grade, 0) / grades.length
 }
-
 
 /**
  * @param {number[]} grades An array containing all grades
  * @return {number} rounded average to 1 decimal
  */
 export function roundedAverage(grades) {
-  // Write your code here
+  if (!Array.isArray(grades)) {
+    throw new Error('Unsupported type')
+  }
+
+  grades.forEach((grade) => {
+    if (typeof grade !== 'number' || Number.isNaN(grade)) {
+      throw new Error('Unsupported type')
+    }
+  })
+
+  const avg = computeAverage(grades)
+  return Math.round(avg * 10) / 10
 }
