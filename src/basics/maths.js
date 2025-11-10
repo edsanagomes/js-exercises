@@ -3,7 +3,7 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  if (!Number.isFinite(diameter)) {
+  if (typeof diameter !== 'number' || !isFinite(diameter)) {
     throw new Error('Unsupported type');
   }
   const radius = diameter / 2;
