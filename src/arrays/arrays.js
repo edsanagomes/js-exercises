@@ -17,7 +17,6 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
   return result; 
 }
 
-
 /**
  * @param {*[]} array1
  * @param {*[]} array2
@@ -25,7 +24,10 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  // Write your code here
+  if (!Array.isArray(array1) || !Array.isArray(array2)) {
+    throw new Error('Unsupported type');
+  }
+  return [...array1, ...array2];
 }
 
 /**
