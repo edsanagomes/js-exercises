@@ -52,7 +52,7 @@ export function retrieveMaximumMinimumUserAges(users) {
     if (user.age < younger.age) {
       younger = user; 
     }
-    if (user.age > older.age) {
+    if (user.age >= older.age) {
       older = user;
     }
   }
