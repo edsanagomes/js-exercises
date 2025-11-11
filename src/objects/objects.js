@@ -46,7 +46,9 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  // Write your code here
+ if (users.age < younger.age) younger = users;   
+ if (users.age > older.age) older = users;  
+ return { younger: younger.name, older: older.name }; 
 }
 
 /**
