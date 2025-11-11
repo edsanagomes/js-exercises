@@ -46,10 +46,19 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
- if (users.age < younger.age) younger = users;   
- if (users.age > older.age) older = users;  
- return { younger: younger.name, older: older.name }; 
+  let younger = users[0]; 
+  let older = users[0];
+  for (const user of users) {
+    if (user.age < younger.age) {
+      younger = user; 
+    }
+    if (user.age > older.age) {
+      older = user;
+    }
+  }
+  return { younger: younger.name, older: older.name };
 }
+
 
 /**
  * In javascript, objects can be represented as string, this is JSON
