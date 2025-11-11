@@ -64,10 +64,10 @@ export function retrieveMaximumMinimumUserAges(users) {
  * In javascript, objects can be represented as string, this is JSON
  * https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON
  * @param {string} string
- * @return {Object} An object retried by parsing the string
+ * @return {Object} An object retried by parsing the string (parcing = renvoyer)
  */
 export function parseJavaScriptObjectNotation(string) {
-  return JSON.parce(string)
+ return JSON.parse(string);
 }
 
 /**
