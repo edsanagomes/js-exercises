@@ -11,10 +11,10 @@
  */
 export function crateUserObject() {
   const user = {
-    first_name: "Toto",
-    last_name: "Tutu"
-  };
-  return user;
+    first_name: 'Toto',
+    last_name: 'Tutu',
+  }
+  return user
 }
 
 /**
@@ -23,8 +23,7 @@ export function crateUserObject() {
  * @return string a concatenation of the first and last name, separated with a space
  */
 export function accessPropertiesInObjects(object) {
-  return object.first_name + " " + object.last_name
-
+  return object.first_name + ' ' + object.last_name
 }
 
 /**
@@ -35,9 +34,9 @@ export function accessPropertiesInObjects(object) {
  * and all original object values mapped to lower case
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
-  const keys = Object.keys(object).map(key => key.toUpperCase());
-  const values = Object.values(object).map(value => value.toLowerCase());
-  return { keys, values };
+  const keys = Object.keys(object).map((key) => key.toUpperCase())
+  const values = Object.values(object).map((value) => value.toLowerCase())
+  return { keys, values }
 }
 
 /**
@@ -46,19 +45,18 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  let younger = users[0]; 
-  let older = users[0];
+  let younger = users[0]
+  let older = users[0]
   for (const user of users) {
     if (user.age < younger.age) {
-      younger = user; 
+      younger = user
     }
     if (user.age >= older.age) {
-      older = user;
+      older = user
     }
   }
-  return { younger: younger.name, older: older.name };
+  return { younger: younger.name, older: older.name }
 }
-
 
 /**
  * In javascript, objects can be represented as string, this is JSON
@@ -67,7 +65,7 @@ export function retrieveMaximumMinimumUserAges(users) {
  * @return {Object} An object retried by parsing the string (parcing = renvoyer)
  */
 export function parseJavaScriptObjectNotation(string) {
- return JSON.parse(string);
+  return JSON.parse(string)
 }
 
 /**
@@ -75,5 +73,5 @@ export function parseJavaScriptObjectNotation(string) {
  * @return {string} An string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
-  return JSON. stringify(object);
+  return JSON.stringify(object)
 }
