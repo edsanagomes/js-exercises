@@ -6,15 +6,19 @@
  * @return {number} The factorial of n
  */
 export function factorial(n) {
-  if (typeof n !== 'number' || Number.isNaN(n) || !Number.isInteger(n) || n < 0) 
-
-    {
-      throw new Error('Invalid input')
-}
-if (n === 0) { // C’est nécessaire pour que la fonction ne tourne pas à l’infini
-  return 1 
-}
- return n * factorial(n - 1); // Récursion - renvoei le valeur, ex: factorial 4, n vaut 4 et factorial sera 4-1 = 3
+  if (
+    typeof n !== 'number' ||
+    Number.isNaN(n) ||
+    !Number.isInteger(n) ||
+    n < 0
+  ) {
+    throw new Error('Invalid input')
+  }
+  if (n === 0) {
+    // C’est nécessaire pour que la fonction ne tourne pas à l’infini
+    return 1
+  }
+  return n * factorial(n - 1) // Récursion - renvoei le valeur, ex: factorial 4, n vaut 4 et factorial sera 4-1 = 3
 }
 
 /**
@@ -25,11 +29,15 @@ if (n === 0) { // C’est nécessaire pour que la fonction ne tourne pas à l’
  * @return {number} The nth Fibonacci number
  */
 export function fibonacci(n) {
-   if (typeof n !== 'number' || Number.isNaN(n) || !Number.isInteger(n) || n < 0) {
-    throw new Error('Invalid input');
+  if (
+    typeof n !== 'number' ||
+    Number.isNaN(n) ||
+    !Number.isInteger(n) ||
+    n < 0
+  ) {
+    throw new Error('Invalid input')
   }
-  if (n === 0) return 0;
-  if (n === 1) return 1;
-   return fibonacci(n - 1) + fibonacci(n -2)
-   
+  if (n === 0) return 0
+  if (n === 1) return 1
+  return fibonacci(n - 1) + fibonacci(n - 2)
 }
