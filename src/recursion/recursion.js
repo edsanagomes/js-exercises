@@ -7,9 +7,14 @@
  */
 export function factorial(n) {
   if (typeof n !== 'number' || Number.isNaN(n) || !Number.isInteger(n) || n < 0) 
+
     {
       throw new Error('Invalid input')
 }
+if (n === 0) {
+  return 1 
+}
+return n = 0; 
 }
 
 /**
