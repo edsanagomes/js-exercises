@@ -11,10 +11,10 @@ export function factorial(n) {
     {
       throw new Error('Invalid input')
 }
-if (n === 0) {
+if (n === 0) { // C’est nécessaire pour que la fonction ne tourne pas à l’infini
   return 1 
 }
-return n = 0; 
+ return n * factorial(n - 1); // Récursion - renvoei le valeur, ex: factorial 4, n vaut 4 et factorial sera 4-1 = 3
 }
 
 /**
@@ -25,5 +25,5 @@ return n = 0;
  * @return {number} The nth Fibonacci number
  */
 export function fibonacci(n) {
-  // Write your code here
+   return fibonacci(n - 1) + fibonacci(n - 2);
 }
